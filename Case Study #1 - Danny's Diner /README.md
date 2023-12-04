@@ -2,7 +2,7 @@
 
 ## [Case study no. 1 - Danny's Diner](https://8weeksqlchallenge.com/case-study-1/)
 <p align="center">
-<img src="Images/1.png" width=40% height=40%>
+<img src="/Images/1.png" width=40% height=40%>
 
 * ### Introduction
 * ### Problem Statement
