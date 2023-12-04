@@ -1,8 +1,9 @@
 # [SQL-Challenge](https://8weeksqlchallenge.com/)
-## Case studies for SQL by Danny Ma
-<img src=""C:\Users\91971\Desktop\1.png"" width=50% height=50%>
 
 ## [Case study no. 1 - Danny's Diner](https://8weeksqlchallenge.com/case-study-1/)
+<p align="center">
+<img src="Images/1.png" width=40% height=40%>
+
 * ### Introduction
 * ### Problem Statement
 * ### Entity Relationship Diagram
