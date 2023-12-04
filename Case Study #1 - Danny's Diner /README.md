@@ -2,15 +2,15 @@
 <p align="center">
 <img src="/Images/1.png" width=40% height=40%>
 
-* #### [Introduction](#introduction)
-* #### Problem Statement
-* #### Entity Relationship Diagram
-* #### Example Datasets
+* ### [Introduction](#introduction)
+* ### Problem Statement
+* ### Entity Relationship Diagram
+* ### Example Datasets
     * Table 1: sales
     * Table 2: menu
     * Table 3: members
-* #### Case Study Questions
-* #### Bonus Questions
+* ### Case Study Questions
+* ### Bonus Questions
 ---
 ## Introduction
 > Danny seriously loves Japanese food so in the beginning of 2021, he decides to embark upon a risky venture and opens up a cute little restaurant that sells his 3 favourite foods: sushi, curry and ramen.
