@@ -1,6 +1,13 @@
-# SeriousSQL
+# SQL-Challenge
 Case studies for Serious SQL course by Danny Ma
 
-### [Case study no. 1 - Danny's Diner](https://8weeksqlchallenge.com/case-study-1/)
-In case study no. 1, a set of business questions were posed related to a database from a user health-tracking app.
-Some starter SQL code was provided, but it needed debugging in order to solve the questions.
+## [Case study no. 1 - Danny's Diner](https://8weeksqlchallenge.com/case-study-1/)
+* ### Introduction
+* ### Problem Statement
+* ### Entity Relationship Diagram
+* ### Example Datasets
+    * Table 1: sales
+    * Table 2: menu
+    * Table 3: members
+* ### Case Study Questions
+* ### Bonus Questions
