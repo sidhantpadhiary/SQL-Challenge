@@ -3,8 +3,8 @@
 <img src="/Images/1.png" width=40% height=40%>
 
 * ### [Introduction](#introduction)
-* ### [Problem Statement](#problem-statement)
-* ### [Entity Relationship Diagram](#entity-relationship-diagram)
+* ### [Problem Statement](#problem-statement-1)
+* ### [Entity Relationship Diagram](#entity-relationship-diagram-1)
 * ### Example Datasets
     * Table 1: sales
     * Table 2: menu
