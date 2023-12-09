@@ -25,3 +25,8 @@
 > Danny wants to use the data to answer a few simple questions about his customers, especially about their visiting patterns, how much money they’ve spent and also which menu items are their favourite. He plans on using these insights to help him decide whether he should expand the existing customer loyalty program.
 
 <br />
+
+---
+## Entity Relationship Diagram
+<p align="left">
+<img src="/Images/2.png" width=50% height=50%>
