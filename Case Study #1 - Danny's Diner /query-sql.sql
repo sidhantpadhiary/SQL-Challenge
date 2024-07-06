@@ -23,13 +23,12 @@ GROUP BY customer_id
 
 -- Output:
 +──────────────+──────────────+
-| customer_id  | total_amount  |
+| customer_id  | cust_visit  |
 +──────────────+──────────────+
-| A            | 76           |
-| B            | 74           |
-| C            | 36           |
+| A            | 4           |
+| B            | 6           |
+| C            | 2           |
 +──────────────+──────────────+  
-
   
 -- 3. What was the first item from the menu purchased by each customer?
 
@@ -44,6 +43,16 @@ FROM rnk_cte
 WHERE rnk = 1
 GROUP BY customer_id, product_name
 
+-- Output:
++──────────────+───────────────+
+| customer_id  | product_name  |
++──────────────+───────────────+
+| A            | sushi         |
+| A	       | curry
+| B            | curry         |
+| C            | ramen         |
++──────────────+───────────────+
+	
 -- 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
 
 WITH cnt_cte AS (
@@ -56,6 +65,13 @@ FROM cnt_cte c
 JOIN dbo.menu d
 ON c.product_id = d.product_id
 ORDER BY item_cnt DESC
+
+-- Output:
++──────────────+───────────────+
+| product_name | item_cnt      |
++──────────────+───────────────+
+| ramen        | 8             |
++──────────────+───────────────+
 
 -- 5. Which item was the most popular for each customer?
 
@@ -71,6 +87,18 @@ SELECT customer_id, product_name, item_cnt
 FROM popular_cte
 WHERE rnk = 1
 
+
+-- Output:
++──────────────+───────────────+──────────────+
+| customer_id  | product_name  | item_cnt     |
++──────────────+───────────────+──────────────+
+| A            | ramen         | 3            |
+| B            | ramen         | 2            |
+| B            | curry         | 2            |
+| B            | sushi         | 2            |
+| C            | ramen         | 3            |
++──────────────+───────────────+──────────────+
+
 -- 6. Which item was purchased first by the customer after they became a member?
 
 WITH member_purchase_cte AS (
@@ -84,6 +112,14 @@ ON me.product_id = s.product_id
 SELECT customer_id, product_name
 FROM member_purchase_cte
 WHERE rnk = 1
+
+-- Output:
++──────────────+───────────────+
+| customer_id  | product_name  |
++──────────────+───────────────+
+| A            | ramen         |
+| B            | sushi         |
++──────────────+───────────────+
 
 -- 7. Which item was purchased just before the customer became a member?
 
@@ -99,6 +135,15 @@ SELECT customer_id, product_name
 FROM purchased_prior_member
 WHERE rnk = 1
 
+-- Output:
++──────────────+───────────────+
+| customer_id  | product_name  |
++──────────────+───────────────+
+| A            | curry         |
+| A            | sushi         |
+| B            | sushi         |
++──────────────+───────────────+
+
 -- 8. What is the total items and amount spent for each member before they became a member?
 
 SELECT s.customer_id, COUNT(m.product_name) AS total_items, SUM(m.price) AS amount_spent
@@ -109,6 +154,14 @@ JOIN dbo.menu m
 ON m.product_id = s.product_id
 GROUP BY s.customer_id
 
+-- Output:
++──────────────+──────────────+──────────────+
+| customer_id  | total_items  | amount_spent |
++──────────────+──────────────+──────────────+
+| A            | 2            | 25           |
+| B            | 3            | 40           |
++──────────────+──────────────+──────────────+
+
 -- 9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
 
 SELECT s.customer_id, SUM(CASE WHEN product_name = 'sushi' THEN 10 * 2 * price ELSE 10 * price END) AS loyalty_points
@@ -117,6 +170,15 @@ JOIN dbo.menu m
 ON s.product_id = m.product_id
 GROUP BY s.customer_id
 
+-- Output:
++──────────────+───────────────+
+| customer_id  |loyalty_points |
++──────────────+───────────────+
+| A            | 860           |
+| B            | 940           |
+| C            | 360           |
++──────────────+───────────────+
+	
 -- 10.In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do 
 --    customer A and B have at the end of January?
 
@@ -133,3 +195,11 @@ JOIN dbo.members me
 ON s.customer_id = me.customer_id 
 WHERE s.order_date < '2021-02-01'
 GROUP BY s.customer_id
+
+-- Output:
++──────────────+───────────────+
+| customer_id  | loyalty_points|
++──────────────+───────────────+
+| A            | 1370          |
+| B            | 820           |
++──────────────+───────────────+
