@@ -6,7 +6,7 @@
 * ### [Problem Statement](#problem-statement-1)
 * ### [Entity Relationship Diagram](#entity-relationship-diagram-1)
 * ### [Example Datasets](#example-datasets-1)
-    * Table 1: sales
+    * [Table 1: sales](#table-1-sales)
     * Table 2: menu
     * Table 3: members
 * ### Case Study Questions
