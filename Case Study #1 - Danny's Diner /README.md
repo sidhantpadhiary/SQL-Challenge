@@ -5,7 +5,7 @@
 * ### [Introduction](#introduction)
 * ### [Problem Statement](#problem-statement-1)
 * ### [Entity Relationship Diagram](#entity-relationship-diagram-1)
-* ### Example Datasets
+* ### [Example Datasets](#example-datasets-1)
     * Table 1: sales
     * Table 2: menu
     * Table 3: members
